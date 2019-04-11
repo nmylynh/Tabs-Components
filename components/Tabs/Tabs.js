@@ -61,8 +61,8 @@ class TabItem {
 
     // Remove the class "tabs-item-selected" from each element
 
-      items.forEach(function(items){
-      items.classList.remove("tabs-item-selected")
+      items.forEach(function(element){
+      element.classList.remove("tabs-item-selected")
     });
 
     
