@@ -56,12 +56,18 @@ class TabItem {
   select() {
     // Select all ".tabs-item" elements from the DOM
     // const items;
-    const items 
+    const items = document.querySelectorAll(".tabs-item");
 
     // Remove the class "tabs-item-selected" from each element
+
+      Array.from(items).forEach(function(items){
+      Array.from(items).remove("tabs-item-selected")
+    });
+
     
     // Add a class named "tabs-item-selected" to this element
     //this.element;
+    this.element.classList.add("tabs-item-selected");
   }
 }
 
@@ -69,10 +75,15 @@ class TabItem {
 
 - Select all classes named ".tabs-link" and assign that value to the links variable
 
+
 - With your selection in place, now chain a .forEach() method onto the links variable to iterate over the DOM NodeList
 
 - In your .forEach() method's callback function, return a new instance of TabLink and pass in each link as a parameter
 
 */
 
-links = document.querySelectorAll();
+links = document.querySelectorAll(".tabs-link");
+
+links.forEach(function(links){
+  return new TabLink(links);
+});
