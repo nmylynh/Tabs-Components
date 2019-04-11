@@ -14,7 +14,7 @@ class TabLink {
 
     // var element = document.body.querySelector('.element[data-id="123456789"]')
 
-    this.itemElement = document.querySelector('.tabs-item[data-tab = "${this.data}"]');
+    this.itemElement = document.querySelector(`.tabs-item[data-tab="${this.data}"]`);
     
     // Using the Item element, create a new instance of the TabItem class
     // this.tabItem;
@@ -25,9 +25,7 @@ class TabLink {
 
   //   this.element.addEventListener("click", this.select);
   // }
-    this.element.addEventListener('click', () => {
-      this.select()
-    })
+    this.element.addEventListener('click', () => this.select());
   }
 
   select() {
@@ -47,7 +45,7 @@ class TabLink {
     this.element.classList.add("tabs-link-selected");
     
     // Call the select method on the item associated with this link
-    this.element.select();
+    this.itemElement.select();
   }
 }
 
